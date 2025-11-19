@@ -1,10 +1,146 @@
-/* ====== TEMA CLARO ====== */
+/* ---------- FONTE FUTURISTA ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    transition: background 0.4s, color 0.4s, border 0.4s, box-shadow 0.4s;
+}
+
+body {
+    margin: 0;
+    background: #030008;
+    color: #d8eafe;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- TEXTO ---------- */
+h1, h2, h3, h4 {
+    color: #00eaff;
+    text-shadow: 0 0 12px #00eaff;
+}
+
+/* ---------- LINKS ---------- */
+a {
+    text-decoration: none;
+    color: #00eaff;
+}
+
+/* ---------- HEADER / NAVBAR ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px #00eaff;
+}
+
+/* ---------- BOTÃO DE TEMA ---------- */
+#theme-toggle {
+    background: none;
+    border: 1px solid rgba(0,234,255,0.4);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #00eaff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    backdrop-filter: blur(6px);
+}
+
+#theme-toggle:hover {
+    background: rgba(0,234,255,0.2);
+    transform: scale(1.1);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+    background: radial-gradient(circle at center, #041023, #010009);
+    animation: glow 6s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: inset 0 0 50px #001; }
+    to   { box-shadow: inset 0 0 150px #002744; }
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+/* ---------- SEÇÕES ---------- */
+section {
+    padding: 60px 10%;
+}
+
+/* ---------- CARDS ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid rgba(0,234,255,0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    text-align: center;
+    padding: 18px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 40px;
+    font-size: 14px;
+    border-top: 1px solid rgba(0,234,255,0.15);
+}
+
+/* ==========================================================
+                ███   TEMA CLARO   ███
+========================================================== */
+
 body.light {
     background: #f4f7ff;
     color: #1a1a1a;
 }
 
-body.light h1, body.light h2, body.light h3, body.light h4 {
+body.light h1, 
+body.light h2, 
+body.light h3, 
+body.light h4 {
     color: #0051a8;
     text-shadow: none;
 }
@@ -24,8 +160,8 @@ body.light .hero {
 
 body.light .card {
     background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 body.light footer {
@@ -40,21 +176,4 @@ body.light #theme-toggle {
 
 body.light #theme-toggle:hover {
     background: rgba(0,81,168,0.2);
-}
-/* ====== BOTÃO TEMA ====== */
-#theme-toggle {
-    background: none;
-    border: 1px solid rgba(0,234,255,0.4);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #00eaff;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-    backdrop-filter: blur(6px);
-}
-
-#theme-toggle:hover {
-    background: rgba(0,234,255,0.2);
-    transform: scale(1.1);
 }
