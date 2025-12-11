@@ -1,348 +1,276 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleber S. Moraes - Desenvolvedor Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleber S. Moraes - Desenvolvedor Web</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Fonte Premium -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
+<style>
+    :root {
+        --bg: #ffffff;
+        --text: #1a1a1a;
+        --text-light: #555;
+        --accent: #0b60ff;
+        --card: #f7f7f7;
+        --border: #e6e6e6;
+    }
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1e1e1e, #333);
-            color: #fff;
-        }
+    [data-theme="dark"] {
+        --bg: #0d0d0d;
+        --text: #f2f2f2;
+        --text-light: #bbb;
+        --accent: #4d8dff;
+        --card: #1a1a1a;
+        --border: #262626;
+    }
 
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+    }
 
-        header p {
-            font-size: 18px;
-            opacity: .85;
-        }
+    body {
+        background: var(--bg);
+        color: var(--text);
+        transition: background .3s, color .3s;
+    }
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+    /* Navbar Premium */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+        z-index: 10;
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        h2 {
-            font-size: 26px;
-            margin-bottom: 15px;
-            border-left: 5px solid #1e1e1e;
-            padding-left: 10px;
-        }
+    nav .brand {
+        font-size: 20px;
+        font-weight: 600;
+    }
 
-        .tech-group {
-            margin-bottom: 18px;
-        }
+    nav button {
+        background: none;
+        border: 1px solid var(--border);
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--text);
+        transition: .3s;
+    }
 
-        ul {
-            padding-left: 18px;
-        }
+    nav button:hover {
+        background: var(--card);
+    }
 
-        .contact p {
-            margin: 6px 0;
-            font-size: 18px;
-        }
+    /* Header Premium */
+    header {
+        padding: 150px 20px 100px;
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+    }
 
-        a {
-            color: #0077ff;
-            text-decoration: none;
-        }
+    header h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    header p {
+        font-size: 20px;
+        color: var(--text-light);
+        margin-top: 10px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1e1e1e;
-            color: #fff;
-            margin-top: 40px;
-        }
-    </style>
+    /* Seções */
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    /* Cards premium */
+    .card {
+        background: var(--card);
+        padding: 28px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        margin-bottom: 22px;
+        transition: .3s;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    }
+
+    ul {
+        margin-left: 20px;
+        line-height: 1.8;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Rodapé */
+    footer {
+        text-align: center;
+        padding: 40px;
+        font-size: 14px;
+        color: var(--text-light);
+        border-top: 1px solid var(--border);
+        margin-top: 60px;
+    }
+</style>
 </head>
 
-<body>
+<body data-theme="light">
 
-    <header>
-        <h1>👋 Olá! Eu sou o Cleber S. Moraes</h1>
-        <p>💻 Desenvolvedor Web & Analista de Sistemas</p>
-        <p>🚀 Criando aplicações modernas, funcionais e bem estruturadas</p>
-    </header>
+<!-- NAVBAR -->
+<nav>
+    <div class="brand">Cleber S. Moraes</div>
+    <button onclick="toggleTheme()">🌙 Modo Escuro</button>
+</nav>
 
-    <section>
-        <h2>🛠️ Tecnologias & Ferramentas</h2>
+<!-- HEADER -->
+<header>
+    <h1>Desenvolvedor Web & Analista de Sistemas</h1>
+    <p>Criando soluções modernas, eficientes e com foco em qualidade.</p>
+</header>
 
-        <div class="tech-group">
-            <strong>Back-end:</strong><br>
-            🐍 Python | 🧩 Django | ☕ Java | 🐘 PostgreSQL | 🗄️ SQL
-        </div>
+<!-- TECNOLOGIAS -->
+<section>
+    <h2>🛠️ Tecnologias & Ferramentas</h2>
 
-        <div class="tech-group">
-            <strong>Front-end:</strong><br>
-            🌐 HTML5 | 🎨 CSS3 | ⚡ JavaScript | 🎛️ Bootstrap
-        </div>
+    <div class="card"><strong>Back-end</strong><br>
+        Python · Django · Java · SQL · PostgreSQL
+    </div>
 
-        <div class="tech-group">
-            <strong>DevOps / Outros:</strong><br>
-            🐳 Docker | 🔗 APIs REST | 📊 Power BI | 🧠 Pandas | 🧰 Git & GitHub
-        </div>
-    </section>
+    <div class="card"><strong>Front-end</strong><br>
+        HTML5 · CSS3 · JavaScript · Bootstrap
+    </div>
 
-    <section>
-        <h2>💼 Experiência Profissional</h2>
+    <div class="card"><strong>DevOps e Outros</strong><br>
+        Docker · APIs REST · Git · GitHub · Power BI · Pandas
+    </div>
+</section>
 
-        <p><strong>👨‍💻 Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong><br>
-            Desenvolvimento web com Django, integrações, automações e versionamento.
-        </p>
+<!-- EXPERIÊNCIA -->
+<section>
+    <h2>💼 Experiência Profissional</h2>
 
-        <p><strong>🧠 Especialista em Negócios – Santander / Pulse Client Experts</strong><br>
-            Atendimento, soluções e relacionamento com PF e PJ.
-        </p>
+    <div class="card">
+        <strong>Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong>
+        <p>Desenvolvimento web com Django, integrações, automações e versionamento.</p>
+    </div>
 
-        <p><strong>📊 Assistente Administrativo Financeiro – ACG (2017–2020)</strong><br>
-            Rotinas financeiras, organização e gestão de dados.
-        </p>
-    </section>
+    <div class="card">
+        <strong>Especialista em Negócios – Santander / Pulse Client Experts</strong>
+        <p>Atendimento, relacionamento e soluções para PF e PJ.</p>
+    </div>
 
-    <section>
-        <h2>🎓 Formação</h2>
+    <div class="card">
+        <strong>Assistente Administrativo Financeiro – ACG (2017–2020)</strong>
+        <p>Rotinas financeiras, conciliações, organização e gestão de dados.</p>
+    </div>
+</section>
 
+<!-- FORMAÇÃO -->
+<section>
+    <h2>🎓 Formação</h2>
+
+    <div class="card">
         <ul>
-            <li>🎓 Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</li>
-            <li>🎓 Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</li>
+            <li>Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</li>
+            <li>Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <h2>🌱 Atualmente aprendendo</h2>
+<!-- APRENDIZADO -->
+<section>
+    <h2>🌱 Atualmente aprendendo</h2>
 
+    <div class="card">
         <ul>
-            <li>📌 Docker avançado</li>
-            <li>📌 APIs escaláveis</li>
-            <li>📌 Integrações modernas com Django e automação em Python</li>
+            <li>Docker avançado</li>
+            <li>APIs escaláveis</li>
+            <li>Integrações modernas com Django</li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <h2>🤝 O que você pode esperar de mim?</h2>
+<!-- QUALIDADES -->
+<section>
+    <h2>🤝 O que você pode esperar de mim?</h2>
 
+    <div class="card">
         <ul>
-            <li>✔ Comprometimento</li>
-            <li>✔ Evolução contínua</li>
-            <li>✔ Qualidade nas entregas</li>
-            <li>✔ Trabalho em equipe</li>
-            <li>✔ Resiliência e foco</li>
+            <li>Comprometimento</li>
+            <li>Evolução contínua</li>
+            <li>Qualidade nas entregas</li>
+            <li>Trabalho em equipe</li>
+            <li>Resiliência e foco</li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section class="contact">
-        <h2>📬 Contato</h2>
+<!-- CONTATO -->
+<section>
+    <h2>📬 Contato</h2>
 
+    <div class="card">
         <p><strong>Email:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        © 2025 - Cleber S. Moraes — Todos os direitos reservados.
-    </footer>
+<!-- RODAPÉ -->
+<footer>
+    © 2025 Cleber S. Moraes — Todos os direitos reservados.
+</footer>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleber S. Moraes - Desenvolvedor Web</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- JS DO MODO ESCURO -->
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const btn = document.querySelector("nav button");
 
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        header {
-            background: #1e1e1e;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-top: 8px;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            border-left: 6px solid #1e1e1e;
-            padding-left: 10px;
-            margin-bottom: 20px;
-            font-size: 26px;
-        }
-
-        .item {
-            margin-bottom: 18px;
-        }
-
-        ul {
-            padding-left: 18px;
-        }
-
-        footer {
-            background: #1e1e1e;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        a {
-            color: #0077ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .contact p {
-            margin: 6px 0;
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>Cleber S. Moraes</h1>
-        <p>Desenvolvedor Web | Analista de Sistemas</p>
-    </header>
-
-    <section>
-        <h2>Formação Acadêmica</h2>
-        <div class="item">Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</div>
-        <div class="item">Tecnólogo em Gestão Financeira – Anhanguera / Uniderp (2017)</div>
-    </section>
-
-    <section>
-        <h2>Cursos Extensivos</h2>
-        <ul>
-            <li>Programador Web – Instituto Federal</li>
-            <li>Banco de Dados – Instituto Federal</li>
-            <li>Descoberta de Conhecimento em Bases de Dados – Instituto Federal</li>
-            <li>Automação de Sistemas – Instituto Federal</li>
-            <li>Excel Avançado – Fundação Bradesco (2014)</li>
-            <li>Gerenciamento de Projetos – Fundação Bradesco (2015)</li>
-            <li>Gestão de Negócios – Sebrae RS (MEG®) (2015)</li>
-            <li>Gestão de Pessoal – Sebrae (2015)</li>
-            <li>Técnicas de Negociação – Sebrae (2015)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Experiência Profissional</h2>
-
-        <div class="item">
-            <strong>Analista Desenvolvedor Júnior / Programador Web – ACG Assessoria e Comunicação Visual (2024 – atual)</strong>
-            <ul>
-                <li>Desenvolvimento de interfaces web com Django, HTML5, CSS3 e JavaScript</li>
-                <li>Integração front-end/back-end via APIs REST</li>
-                <li>Automação de processos com Python</li>
-                <li>Trabalho colaborativo com Git e metodologias ágeis</li>
-                <li>Responsividade e acessibilidade web</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <strong>Especialista em Negócios – Pulse Client Experts (Santander)</strong>
-            <p>Atendimento pessoa física e PJ, foco em relacionamento, negócios, produtos bancários e vendas.</p>
-        </div>
-
-        <div class="item">
-            <strong>Assistente Administrativo Financeiro (PJ) – ACG Assessoria e Treinamentos (2017–2020)</strong>
-            <ul>
-                <li>Conciliação bancária, contas a pagar e receber</li>
-                <li>Emissão de NF, controle financeiro e armazenamento de dados</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Hard Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>SQL | PostgreSQL</li>
-            <li>Django</li>
-            <li>Laravel</li>
-            <li>Docker</li>
-            <li>APIs REST</li>
-            <li>Bootstrap</li>
-            <li>Power BI</li>
-            <li>Pandas</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Responsabilidade</li>
-            <li>Honestidade</li>
-            <li>Organização</li>
-            <li>Trabalho em equipe</li>
-            <li>Determinação</li>
-            <li>Foco</li>
-            <li>Resiliência</li>
-        </ul>
-    </section>
-
-    <section class="contact">
-        <h2>Contato</h2>
-        <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
-        <p><strong>E-mail:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
-        <p><strong>Telefone:</strong> (51) 98163-9633</p>
-    </section>
-
-    <footer>
-        &copy; 2025 Cleber S. Moraes — Todos os direitos reservados.
-    </footer>
+    if (body.dataset.theme === "light") {
+        body.dataset.theme = "dark";
+        btn.textContent = "☀️ Modo Claro";
+    } else {
+        body.dataset.theme = "light";
+        btn.textContent = "🌙 Modo Escuro";
+    }
+}
+</script>
 
 </body>
 </html>
