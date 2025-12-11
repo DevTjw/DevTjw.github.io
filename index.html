@@ -1,71 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LABYSIM – Rede_Loja</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleber S. Moraes - Desenvolvedor Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
 
-<script src="script.js" defer></script>
+        header {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            border-left: 6px solid #1e1e1e;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        .item {
+            margin-bottom: 18px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #0077ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact p {
+            margin: 6px 0;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>LABYSIM</h1>
+    <header>
+        <h1>Cleber S. Moraes</h1>
+        <p>Desenvolvedor Web | Analista de Sistemas</p>
+    </header>
 
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="objetivos.html">Objetivos</a>
-        <a href="acoes.html">Ações</a>
-        <a href="rede.html">Rede_Loja</a>
-        <a href="loja.html">Loja</a>
-        <a href="contato.html">Contato</a>
-    </nav>
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <div class="item">Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</div>
+        <div class="item">Tecnólogo em Gestão Financeira – Anhanguera / Uniderp (2017)</div>
+    </section>
 
-    <!-- BOTÃO DE TEMA -->
-    <button id="theme-toggle">
-        <i class="fa-solid fa-moon"></i>
-    </button>
-</header>
+    <section>
+        <h2>Cursos Extensivos</h2>
+        <ul>
+            <li>Programador Web – Instituto Federal</li>
+            <li>Banco de Dados – Instituto Federal</li>
+            <li>Descoberta de Conhecimento em Bases de Dados – Instituto Federal</li>
+            <li>Automação de Sistemas – Instituto Federal</li>
+            <li>Excel Avançado – Fundação Bradesco (2014)</li>
+            <li>Gerenciamento de Projetos – Fundação Bradesco (2015)</li>
+            <li>Gestão de Negócios – Sebrae RS (MEG®) (2015)</li>
+            <li>Gestão de Pessoal – Sebrae (2015)</li>
+            <li>Técnicas de Negociação – Sebrae (2015)</li>
+        </ul>
+    </section>
 
-<div class="hero">
-    <h2>REDE_LOJA — O Futuro da Sociedade Conectada</h2>
-    <p>
-        A LABYSIM cria tecnologias que ampliam liberdade, transparência e oportunidade para todos.
-        Nossa missão é trazer o impacto da sociedade para a vista de todos, de forma aberta, segura e futurista.
-    </p>
-</div>
+    <section>
+        <h2>Experiência Profissional</h2>
 
-<section>
-    <h3 class="sec-title">Pilares da LABYSIM</h3>
-
-    <div class="cards">
-        <div class="card">
-            <i class="fa-solid fa-globe"></i>
-            <h4>Transparência Global</h4>
-            <p>Sistemas que mostram o impacto social de forma aberta e colaborativa.</p>
+        <div class="item">
+            <strong>Analista Desenvolvedor Júnior / Programador Web – ACG Assessoria e Comunicação Visual (2024 – atual)</strong>
+            <ul>
+                <li>Desenvolvimento de interfaces web com Django, HTML5, CSS3 e JavaScript</li>
+                <li>Integração front-end/back-end via APIs REST</li>
+                <li>Automação de processos com Python</li>
+                <li>Trabalho colaborativo com Git e metodologias ágeis</li>
+                <li>Responsividade e acessibilidade web</li>
+            </ul>
         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-users"></i>
-            <h4>Inclusão e Oportunidade</h4>
-            <p>Projetos que unem tecnologia e igualdade para gerar oportunidades para todos.</p>
+        <div class="item">
+            <strong>Especialista em Negócios – Pulse Client Experts (Santander)</strong>
+            <p>Atendimento pessoa física e PJ, foco em relacionamento, negócios, produtos bancários e vendas.</p>
         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-robot"></i>
-            <h4>Futuro Tecnológico</h4>
-            <p>Desenvolvimento de soluções modernas voltadas a conectar a sociedade.</p>
+        <div class="item">
+            <strong>Assistente Administrativo Financeiro (PJ) – ACG Assessoria e Treinamentos (2017–2020)</strong>
+            <ul>
+                <li>Conciliação bancária, contas a pagar e receber</li>
+                <li>Emissão de NF, controle financeiro e armazenamento de dados</li>
+            </ul>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    © 2025 LABYSIM – Rede_Loja • Tecnologia para Todos
+    <section>
+        <h2>Hard Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL | PostgreSQL</li>
+            <li>Django</li>
+            <li>Laravel</li>
+            <li>Docker</li>
+            <li>APIs REST</li>
+            <li>Bootstrap</li>
+            <li>Power BI</li>
+            <li>Pandas</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>Responsabilidade</li>
+            <li>Honestidade</li>
+            <li>Organização</li>
+            <li>Trabalho em equipe</li>
+            <li>Determinação</li>
+            <li>Foco</li>
+            <li>Resiliência</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Contato</h2>
+        <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
+        <p><strong>Telefone:</strong> (51) 98163-9633</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Cleber S. Moraes — Todos os direitos reservados.
+    </footer>
 
 </body>
 </html>
