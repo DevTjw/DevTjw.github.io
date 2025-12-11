@@ -1,276 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cleber S. Moraes - Desenvolvedor Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleber S. Moraes - Desenvolvedor Web</title>
+    
+    <!-- FONTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Fonte Premium -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ESTILO -->
+    <style>
+        :root {
+            --bg: #f5f5f5;
+            --bg-card: #ffffff;
+            --text: #222;
+            --subtext: #444;
+            --accent: #0078ff;
+            --border: #e3e3e3;
+        }
 
-<style>
-    :root {
-        --bg: #ffffff;
-        --text: #1a1a1a;
-        --text-light: #555;
-        --accent: #0b60ff;
-        --card: #f7f7f7;
-        --border: #e6e6e6;
-    }
+        [data-theme="dark"] {
+            --bg: #121212;
+            --bg-card: #1e1e1e;
+            --text: #e5e5e5;
+            --subtext: #bbbbbb;
+            --accent: #4da3ff;
+            --border: #333;
+        }
 
-    [data-theme="dark"] {
-        --bg: #0d0d0d;
-        --text: #f2f2f2;
-        --text-light: #bbb;
-        --accent: #4d8dff;
-        --card: #1a1a1a;
-        --border: #262626;
-    }
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: .3s;
+        }
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", sans-serif;
-    }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--accent), #003f88);
+            color: #fff;
+        }
 
-    body {
-        background: var(--bg);
-        color: var(--text);
-        transition: background .3s, color .3s;
-    }
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: 700;
+        }
 
-    /* Navbar Premium */
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        z-index: 10;
-        padding: 16px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        header p {
+            margin-top: 10px;
+            font-size: 20px;
+            opacity: .95;
+        }
 
-    nav .brand {
-        font-size: 20px;
-        font-weight: 600;
-    }
+        /* Botão de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text);
+            transition: .3s;
+        }
 
-    nav button {
-        background: none;
-        border: 1px solid var(--border);
-        padding: 8px 14px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 500;
-        color: var(--text);
-        transition: .3s;
-    }
+        /* Seções */
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
 
-    nav button:hover {
-        background: var(--card);
-    }
+        h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            border-left: 6px solid var(--accent);
+            padding-left: 12px;
+            font-weight: 700;
+        }
 
-    /* Header Premium */
-    header {
-        padding: 150px 20px 100px;
-        text-align: center;
-        max-width: 900px;
-        margin: auto;
-    }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px #00000015;
+            transition: .3s;
+        }
 
-    header h1 {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+        ul {
+            padding-left: 20px;
+        }
 
-    header p {
-        font-size: 20px;
-        color: var(--text-light);
-        margin-top: 10px;
-    }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    /* Seções */
-    section {
-        max-width: 900px;
-        margin: auto;
-        padding: 60px 20px;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    h2 {
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 25px;
-    }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1e1e1e;
+            color: #fff;
+            margin-top: 40px;
+        }
 
-    /* Cards premium */
-    .card {
-        background: var(--card);
-        padding: 28px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        margin-bottom: 22px;
-        transition: .3s;
-    }
-
-    .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-    }
-
-    ul {
-        margin-left: 20px;
-        line-height: 1.8;
-    }
-
-    a {
-        color: var(--accent);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* Rodapé */
-    footer {
-        text-align: center;
-        padding: 40px;
-        font-size: 14px;
-        color: var(--text-light);
-        border-top: 1px solid var(--border);
-        margin-top: 60px;
-    }
-</style>
+    </style>
 </head>
-
 <body data-theme="light">
 
-<!-- NAVBAR -->
-<nav>
-    <div class="brand">Cleber S. Moraes</div>
-    <button onclick="toggleTheme()">🌙 Modo Escuro</button>
-</nav>
+    <!-- BOTÃO DE TEMA -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Escuro</button>
 
-<!-- HEADER -->
-<header>
-    <h1>Desenvolvedor Web & Analista de Sistemas</h1>
-    <p>Criando soluções modernas, eficientes e com foco em qualidade.</p>
-</header>
+    <header>
+        <h1>Cleber S. Moraes</h1>
+        <p>Desenvolvedor Web & Analista de Sistemas</p>
+        <p>Construindo soluções modernas, performáticas e eficientes</p>
+    </header>
 
-<!-- TECNOLOGIAS -->
-<section>
-    <h2>🛠️ Tecnologias & Ferramentas</h2>
+    <section>
+        <h2>🛠️ Tecnologias & Ferramentas</h2>
 
-    <div class="card"><strong>Back-end</strong><br>
-        Python · Django · Java · SQL · PostgreSQL
-    </div>
+        <div class="card">
+            <strong>Back-end</strong><br>
+            🐍 Python · 🧩 Django · ☕ Java · 🐘 PostgreSQL · 🗄️ SQL
+        </div>
 
-    <div class="card"><strong>Front-end</strong><br>
-        HTML5 · CSS3 · JavaScript · Bootstrap
-    </div>
+        <div class="card">
+            <strong>Front-end</strong><br>
+            🌐 HTML5 · 🎨 CSS3 · ⚡ JavaScript · 🎛️ Bootstrap
+        </div>
 
-    <div class="card"><strong>DevOps e Outros</strong><br>
-        Docker · APIs REST · Git · GitHub · Power BI · Pandas
-    </div>
-</section>
+        <div class="card">
+            <strong>DevOps / Outros</strong><br>
+            🐳 Docker · 🔗 APIs REST · 📊 Power BI · 🧠 Pandas · 🧰 Git & GitHub
+        </div>
+    </section>
 
-<!-- EXPERIÊNCIA -->
-<section>
-    <h2>💼 Experiência Profissional</h2>
+    <section>
+        <h2>💼 Experiência Profissional</h2>
 
-    <div class="card">
-        <strong>Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong>
-        <p>Desenvolvimento web com Django, integrações, automações e versionamento.</p>
-    </div>
+        <div class="card">
+            <strong>👨‍💻 Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong>
+            <p>Desenvolvimento web com Django, integrações, automações e versionamento.</p>
+        </div>
 
-    <div class="card">
-        <strong>Especialista em Negócios – Santander / Pulse Client Experts</strong>
-        <p>Atendimento, relacionamento e soluções para PF e PJ.</p>
-    </div>
+        <div class="card">
+            <strong>🧠 Especialista em Negócios – Santander / Pulse Client Experts</strong>
+            <p>Atendimento e soluções para PF e PJ com foco em relacionamento e negócios.</p>
+        </div>
 
-    <div class="card">
-        <strong>Assistente Administrativo Financeiro – ACG (2017–2020)</strong>
-        <p>Rotinas financeiras, conciliações, organização e gestão de dados.</p>
-    </div>
-</section>
+        <div class="card">
+            <strong>📊 Assistente Administrativo Financeiro – ACG (2017–2020)</strong>
+            <p>Gestão financeira, conciliações, organização e controle de dados.</p>
+        </div>
+    </section>
 
-<!-- FORMAÇÃO -->
-<section>
-    <h2>🎓 Formação</h2>
+    <section>
+        <h2>🎓 Formação</h2>
 
-    <div class="card">
-        <ul>
-            <li>Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</li>
-            <li>Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</li>
-        </ul>
-    </div>
-</section>
+        <div class="card">
+            <ul>
+                <li>🎓 Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</li>
+                <li>🎓 Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</li>
+            </ul>
+        </div>
+    </section>
 
-<!-- APRENDIZADO -->
-<section>
-    <h2>🌱 Atualmente aprendendo</h2>
+    <section>
+        <h2>🌱 Atualmente aprendendo</h2>
 
-    <div class="card">
-        <ul>
-            <li>Docker avançado</li>
-            <li>APIs escaláveis</li>
-            <li>Integrações modernas com Django</li>
-        </ul>
-    </div>
-</section>
+        <div class="card">
+            <ul>
+                <li>📌 Docker avançado</li>
+                <li>📌 APIs escaláveis</li>
+                <li>📌 Integrações modernas com Django</li>
+            </ul>
+        </div>
+    </section>
 
-<!-- QUALIDADES -->
-<section>
-    <h2>🤝 O que você pode esperar de mim?</h2>
+    <section>
+        <h2>🤝 O que você pode esperar de mim?</h2>
 
-    <div class="card">
-        <ul>
-            <li>Comprometimento</li>
-            <li>Evolução contínua</li>
-            <li>Qualidade nas entregas</li>
-            <li>Trabalho em equipe</li>
-            <li>Resiliência e foco</li>
-        </ul>
-    </div>
-</section>
+        <div class="card">
+            <ul>
+                <li>✔ Comprometimento</li>
+                <li>✔ Evolução contínua</li>
+                <li>✔ Qualidade nas entregas</li>
+                <li>✔ Trabalho em equipe</li>
+                <li>✔ Resiliência e foco</li>
+            </ul>
+        </div>
+    </section>
 
-<!-- CONTATO -->
-<section>
-    <h2>📬 Contato</h2>
+    <section>
+        <h2>📬 Contato</h2>
 
-    <div class="card">
-        <p><strong>Email:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
-    </div>
-</section>
+        <div class="card">
+            <p><strong>Email:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
+        </div>
+    </section>
 
-<!-- RODAPÉ -->
-<footer>
-    © 2025 Cleber S. Moraes — Todos os direitos reservados.
-</footer>
+    <footer>
+        © 2025 Cleber S. Moraes — Todos os direitos reservados.
+    </footer>
 
-<!-- JS DO MODO ESCURO -->
-<script>
-function toggleTheme() {
-    const body = document.body;
-    const btn = document.querySelector("nav button");
-
-    if (body.dataset.theme === "light") {
-        body.dataset.theme = "dark";
-        btn.textContent = "☀️ Modo Claro";
-    } else {
-        body.dataset.theme = "light";
-        btn.textContent = "🌙 Modo Escuro";
-    }
-}
-</script>
+    <!-- SCRIPT DO TEMA -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector(".theme-toggle");
+            
+            if (body.getAttribute("data-theme") === "light") {
+                body.setAttribute("data-theme", "dark");
+                button.textContent = "☀️ Claro";
+            } else {
+                body.setAttribute("data-theme", "light");
+                button.textContent = "🌙 Escuro";
+            }
+        }
+    </script>
 
 </body>
 </html>
