@@ -5,204 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cleber S. Moraes - Desenvolvedor Web</title>
 
-<!-- Fonte Premium -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
     :root {
-        --bg: #ffffff;
-        --text: #1a1a1a;
-        --text-light: #555;
-        --accent: #0b60ff;
-        --card: #f7f7f7;
-        --border: #e6e6e6;
+        --bg: #fafafa;
+        --text: #222;
+        --subtext: #555;
+        --accent: #0078ff;
+        --card: #ffffff;
+        --border: #e2e2e2;
     }
-
     [data-theme="dark"] {
-        --bg: #0d0d0d;
-        --text: #f2f2f2;
-        --text-light: #bbb;
+        --bg: #0f0f0f;
+        --text: #eee;
+        --subtext: #bbb;
         --accent: #4d8dff;
-        --card: #1a1a1a;
-        --border: #262626;
+        --card: #1e1e1e;
+        --border: #333;
     }
 
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: "Inter", sans-serif;
+        font-family: "Montserrat", sans-serif;
     }
-
     body {
         background: var(--bg);
         color: var(--text);
-        transition: background .3s, color .3s;
+        transition: .3s;
     }
 
-    /* Navbar Premium */
+    /* Navbar */
     nav {
         position: fixed;
-        top: 0;
         width: 100%;
+        top: 0;
         background: var(--bg);
         border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        z-index: 10;
-        padding: 16px 40px;
+        padding: 14px 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 10;
     }
-
-    nav .brand {
-        font-size: 20px;
-        font-weight: 600;
-    }
-
+    nav .brand { font-size: 22px; font-weight: 700; color: var(--accent); }
     nav button {
-        background: none;
+        padding: 8px 12px;
         border: 1px solid var(--border);
-        padding: 8px 14px;
-        border-radius: 8px;
+        background: var(--card);
+        border-radius: 6px;
         cursor: pointer;
         font-weight: 500;
         color: var(--text);
-        transition: .3s;
     }
 
-    nav button:hover {
-        background: var(--card);
-    }
-
-    /* Header Premium */
     header {
-        padding: 150px 20px 100px;
         text-align: center;
-        max-width: 900px;
-        margin: auto;
+        padding: 140px 20px 60px;
     }
-
+    header img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid var(--accent);
+        margin-bottom: 18px;
+    }
     header h1 {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 10px;
+        font-size: 40px;
+        margin-bottom: 6px;
     }
+    header p { font-size: 18px; color: var(--subtext); }
 
-    header p {
-        font-size: 20px;
-        color: var(--text-light);
-        margin-top: 10px;
-    }
-
-    /* Seções */
     section {
         max-width: 900px;
         margin: auto;
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
-
     h2 {
         font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 25px;
+        margin-bottom: 18px;
+        border-left: 6px solid var(--accent);
+        padding-left: 10px;
     }
-
-    /* Cards premium */
     .card {
         background: var(--card);
-        padding: 28px;
-        border-radius: 14px;
         border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 22px;
         margin-bottom: 22px;
         transition: .3s;
     }
-
     .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+    ul { padding-left: 20px; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+        gap: 18px;
+    }
+    .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+        transition: .3s;
+    }
+    .project-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.1);
     }
 
-    ul {
-        margin-left: 20px;
-        line-height: 1.8;
-    }
-
-    a {
-        color: var(--accent);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* Rodapé */
     footer {
         text-align: center;
-        padding: 40px;
-        font-size: 14px;
-        color: var(--text-light);
+        padding: 28px;
+        color: var(--subtext);
         border-top: 1px solid var(--border);
-        margin-top: 60px;
+        font-size: 14px;
     }
 </style>
 </head>
-
 <body data-theme="light">
 
-<!-- NAVBAR -->
 <nav>
     <div class="brand">Cleber S. Moraes</div>
     <button onclick="toggleTheme()">🌙 Modo Escuro</button>
 </nav>
 
-<!-- HEADER -->
 <header>
-    <h1>Desenvolvedor Web & Analista de Sistemas</h1>
-    <p>Criando soluções modernas, eficientes e com foco em qualidade.</p>
+    <img src="https://avatars.githubusercontent.com/DevTjw" alt="Foto de Cleber S. Moraes">
+    <h1>Cleber S. Moraes</h1>
+    <p>Desenvolvedor Web & Analista de Sistemas | 📍 Brasil</p>
 </header>
 
-<!-- TECNOLOGIAS -->
+<!-- Tecnologias -->
 <section>
     <h2>🛠️ Tecnologias & Ferramentas</h2>
 
-    <div class="card"><strong>Back-end</strong><br>
-        Python · Django · Java · SQL · PostgreSQL
-    </div>
-
-    <div class="card"><strong>Front-end</strong><br>
-        HTML5 · CSS3 · JavaScript · Bootstrap
-    </div>
-
-    <div class="card"><strong>DevOps e Outros</strong><br>
-        Docker · APIs REST · Git · GitHub · Power BI · Pandas
-    </div>
+    <div class="card"><strong>Back-end</strong><br>Python · Django · Java · SQL · PostgreSQL</div>
+    <div class="card"><strong>Front-end</strong><br>HTML5 · CSS3 · JavaScript · Bootstrap</div>
+    <div class="card"><strong>DevOps / Outros</strong><br>Docker · APIs REST · Power BI · Pandas · Git & GitHub</div>
 </section>
 
-<!-- EXPERIÊNCIA -->
+<!-- Experiência -->
 <section>
     <h2>💼 Experiência Profissional</h2>
 
     <div class="card">
         <strong>Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong>
-        <p>Desenvolvimento web com Django, integrações, automações e versionamento.</p>
+        <ul>
+            <li>Desenvolvimento web com Django, integração API REST e automações</li>
+            <li>Responsividade, acessibilidade e boas práticas de código</li>
+            <li>Versionamento com Git em metodologias ágeis</li>
+        </ul>
     </div>
-
     <div class="card">
         <strong>Especialista em Negócios – Santander / Pulse Client Experts</strong>
-        <p>Atendimento, relacionamento e soluções para PF e PJ.</p>
+        <ul>
+            <li>Atendimento PF e PJ com foco em relacionamento e vendas</li>
+        </ul>
     </div>
-
     <div class="card">
         <strong>Assistente Administrativo Financeiro – ACG (2017–2020)</strong>
-        <p>Rotinas financeiras, conciliações, organização e gestão de dados.</p>
+        <ul>
+            <li>Conciliação bancária, contas a pagar e fluxos financeiros</li>
+            <li>Emissão de NF e controle financeiro</li>
+        </ul>
     </div>
 </section>
 
-<!-- FORMAÇÃO -->
+<!-- Formação -->
 <section>
-    <h2>🎓 Formação</h2>
+    <h2>🎓 Formação Acadêmica & Certificações</h2>
 
     <div class="card">
         <ul>
@@ -210,58 +192,81 @@
             <li>Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</li>
         </ul>
     </div>
-</section>
-
-<!-- APRENDIZADO -->
-<section>
-    <h2>🌱 Atualmente aprendendo</h2>
-
     <div class="card">
         <ul>
-            <li>Docker avançado</li>
-            <li>APIs escaláveis</li>
-            <li>Integrações modernas com Django</li>
+            <li>Programador Web – Instituto Federal</li>
+            <li>Banco de Dados – Instituto Federal</li>
+            <li>Excel Avançado – Fundação Bradesco</li>
+            <li>Gerenciamento de Projetos – Fundação Bradesco</li>
         </ul>
     </div>
 </section>
 
-<!-- QUALIDADES -->
+<!-- Projetos -->
 <section>
-    <h2>🤝 O que você pode esperar de mim?</h2>
+    <h2>📁 Projetos Destaque</h2>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Portfolio Web</h3>
+            <p>Portfolio pessoal com HTML, CSS e JavaScript.</p>
+            <a href="https://github.com/DevTjw/portfolio">Ver no GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>API Django</h3>
+            <p>API REST desenvolvida em Django.</p>
+            <a href="https://github.com/DevTjw/django-api">Ver no GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Sistema Financeiro</h3>
+            <p>Sistema de gestão financeira com Python.</p>
+            <a href="#">Ver no GitHub</a>
+        </div>
+    </div>
+</section>
+
+<!-- Soft & Hard Skills -->
+<section>
+    <h2>💡 Hard & Soft Skills</h2>
 
     <div class="card">
+        <strong>Hard Skills:</strong>
         <ul>
-            <li>Comprometimento</li>
-            <li>Evolução contínua</li>
-            <li>Qualidade nas entregas</li>
-            <li>Trabalho em equipe</li>
-            <li>Resiliência e foco</li>
+            <li>JavaScript · Python · Java · Django · Laravel</li>
+            <li>SQL · PostgreSQL · APIs REST</li>
+            <li>Docker · Bootstrap · Power BI · Pandas</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <strong>Soft Skills:</strong>
+        <ul>
+            <li>Responsabilidade · Organização · Trabalho em equipe</li>
+            <li>Determinação · Foco · Resiliência</li>
         </ul>
     </div>
 </section>
 
-<!-- CONTATO -->
+<!-- Contato -->
 <section>
     <h2>📬 Contato</h2>
 
     <div class="card">
         <p><strong>Email:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">/cleber-santos-294642379</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
+        <p><strong>Telefone:</strong> (51) 98163-9633</p>
     </div>
 </section>
 
-<!-- RODAPÉ -->
 <footer>
-    © 2025 Cleber S. Moraes — Todos os direitos reservados.
+    © 2025 • Desenvolvido por Cleber S. Moraes • Todos os direitos reservados.
 </footer>
 
-<!-- JS DO MODO ESCURO -->
 <script>
 function toggleTheme() {
     const body = document.body;
     const btn = document.querySelector("nav button");
-
     if (body.dataset.theme === "light") {
         body.dataset.theme = "dark";
         btn.textContent = "☀️ Modo Claro";
