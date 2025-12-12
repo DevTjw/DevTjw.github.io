@@ -5,150 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LABYSIM – Rede_Loja</title>
 
-    <link rel="stylesheet" href="style.css">
-        <!-- Bootstrap 5 -->
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="style.css">
 
     <script src="script.js" defer></script>
-    
-    <!-- ESTILO -->
-   
 </head>
-<body data-theme="light">
-    <h1>LABYSIM</h1>
 
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="labysim.html">labysim</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="objetivos.html">Objetivos</a>
-        <a href="acoes.html">Ações</a>
-        <a href="rede.html">Rede_Loja</a>
-        <a href="loja.html">Loja</a>
-        <a href="contato.html">Contato</a>
-                <!-- LINKS NOVOS -->
-        <a href="https://DevTjw.github.io" target="_blank">DevTjw</a>
-        <a href="https://rede-social-h2fn.onrender.com" target="_blank">Rede Social</a>
-        <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">LinkDin</a>
-    </nav>
+<body data-theme="light" class="bg-light">
 
-    <!-- BOTÃO DE TEMA -->
-    <button id="theme-toggle">
-        <i class="fa-solid fa-moon"></i>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold" href="index.html">LABYSIM</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div id="menu" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="labysim.html">Labysim</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link" href="objetivos.html">Objetivos</a></li>
+            <li class="nav-item"><a class="nav-link" href="acoes.html">Ações</a></li>
+            <li class="nav-item"><a class="nav-link" href="rede.html">Rede_Loja</a></li>
+            <li class="nav-item"><a class="nav-link" href="loja.html">Loja</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+
+            <!-- LINKS NOVOS -->
+            <li class="nav-item"><a class="nav-link" href="https://DevTjw.github.io" target="_blank">DevTjw</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://rede-social-h2fn.onrender.com" target="_blank">Rede Social</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">LinkedIn</a></li>
+        </ul>
+
+        <!-- DARK/LIGHT BUTTON -->
+        <button id="theme-toggle" class="btn btn-outline-light ms-3">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="text-center py-5 bg-primary text-white">
+    <h1 class="fw-bold">Cleber S. Moraes</h1>
+    <p class="lead">Desenvolvedor Web & Analista de Sistemas</p>
+    <p>Construindo soluções modernas, performáticas e eficientes</p>
+</header>
+
+<!-- CONTEÚDO -->
+<div class="container my-5">
+
+    <!-- TECNOLOGIAS -->
     <section>
-        <h1>Cleber S. Moraes</h1>
-        <p>Desenvolvedor Web & Analista de Sistemas</p>
-        <p>Construindo soluções modernas, performáticas e eficientes</p>
+        <h2 class="text-center mb-3">🛠️ Tecnologias & Ferramentas</h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-3 shadow">
+                    <strong>Back-end</strong><br>
+                    🐍 Python · 🧩 Django · ☕ Java · 🐘 PostgreSQL · 🗄️ SQL
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 shadow">
+                    <strong>Front-end</strong><br>
+                    🌐 HTML5 · 🎨 CSS3 · ⚡ JavaScript · 🎛️ Bootstrap
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 shadow">
+                    <strong>DevOps / Outros</strong><br>
+                    🐳 Docker · 🔗 APIs REST · 📊 Power BI · 🧠 Pandas · 🧰 Git & GitHub
+                </div>
+            </div>
+        </div>
     </section>
 
+    <hr class="my-5">
+
+    <!-- EXPERIÊNCIA -->
     <section>
-        <h2>🛠️ Tecnologias & Ferramentas</h2>
+        <h2 class="text-center mb-3">💼 Experiência Profissional</h2>
 
-        <div class="card">
-            <strong>Back-end</strong><br>
-            🐍 Python · 🧩 Django · ☕ Java · 🐘 PostgreSQL · 🗄️ SQL
-        </div>
-
-        <div class="card">
-            <strong>Front-end</strong><br>
-            🌐 HTML5 · 🎨 CSS3 · ⚡ JavaScript · 🎛️ Bootstrap
-        </div>
-
-        <div class="card">
-            <strong>DevOps / Outros</strong><br>
-            🐳 Docker · 🔗 APIs REST · 📊 Power BI · 🧠 Pandas · 🧰 Git & GitHub
-        </div>
-    </section>
-
-    <section>
-        <h2>💼 Experiência Profissional</h2>
-
-        <div class="card">
+        <div class="card p-3 shadow mb-3">
             <strong>👨‍💻 Analista Desenvolvedor Júnior – ACG (2024 – Atual)</strong>
             <p>Desenvolvimento web com Django, integrações, automações e versionamento.</p>
         </div>
 
-        <div class="card">
+        <div class="card p-3 shadow mb-3">
             <strong>🧠 Especialista em Negócios – Santander / Pulse Client Experts</strong>
             <p>Atendimento e soluções para PF e PJ com foco em relacionamento e negócios.</p>
         </div>
 
-        <div class="card">
+        <div class="card p-3 shadow">
             <strong>📊 Assistente Administrativo Financeiro – ACG (2017–2020)</strong>
             <p>Gestão financeira, conciliações, organização e controle de dados.</p>
         </div>
     </section>
 
-    <section>
-        <h2>🎓 Formação</h2>
+    <hr class="my-5">
 
-        <div class="card">
-            <ul>
-                <strong>🎓 Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER</strong><br>
-                <strong>🎓 Tecnólogo em Gestão Financeira – Anhanguera / Uniderp</strong>
-            </ul>
+    <!-- FORMAÇÃO -->
+    <section>
+        <h2 class="text-center mb-3">🎓 Formação</h2>
+
+        <div class="card p-3 shadow">
+            🎓 Tecnólogo em Análise e Desenvolvimento de Sistemas – UNINTER<br>
+            🎓 Tecnólogo em Gestão Financeira – Anhanguera / Uniderp
         </div>
     </section>
 
-    <section>
-        <h2>🌱 Atualmente aprendendo</h2>
+    <hr class="my-5">
 
-        <div class="card">
-            <ul>
-                <strong>📌 Docker avançado</strong><br>
-                <strong>📌 APIs escaláveis</strong><br>
-                <strong>📌 Integrações modernas com Django</strong>
-            </ul>
+    <!-- APRENDIZADO -->
+    <section>
+        <h2 class="text-center mb-3">🌱 Atualmente aprendendo</h2>
+
+        <div class="card p-3 shadow">
+            📌 Docker avançado<br>
+            📌 APIs escaláveis<br>
+            📌 Integrações modernas com Django
         </div>
     </section>
 
-    <section>
-        <h2>🤝 O que você pode esperar de mim?</h2>
+    <hr class="my-5">
 
-        <div class="card">
-            <ul>
-                <strong>✔ Comprometimento</strong><br>
-                <strong>✔ Evolução contínua</strong><br>
-                <strong>✔ Qualidade nas entregas</strong><br>
-                <strong>✔ Trabalho em equipe</strong><br>
-                <strong>✔ Resiliência e foco</strong>
-            </ul>
+    <!-- VALORES -->
+    <section>
+        <h2 class="text-center mb-3">🤝 O que você pode esperar de mim?</h2>
+
+        <div class="card p-3 shadow">
+            ✔ Comprometimento<br>
+            ✔ Evolução contínua<br>
+            ✔ Qualidade nas entregas<br>
+            ✔ Trabalho em equipe<br>
+            ✔ Resiliência e foco
         </div>
     </section>
 
-    <section>
-        <h2>📬 Contato</h2>
+    <hr class="my-5">
 
-        <div class="card">
+    <!-- CONTATO -->
+    <section>
+        <h2 class="text-center mb-3">📬 Contato</h2>
+
+        <div class="card p-3 shadow">
             <p><strong>Email:</strong> <a href="mailto:devops.cleber@gmail.com">devops.cleber@gmail.com</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cleber-santos-294642379" target="_blank">linkedin.com/in/cleber-santos-294642379</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/DevTjw" target="_blank">github.com/DevTjw</a></p>
         </div>
     </section>
 
-    <footer>
-        © 2025 Cleber S. Moraes — Todos os direitos reservados.
-    </footer>
+</div>
 
-    <!-- SCRIPT DO TEMA -->
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const button = document.querySelector(".theme-toggle");
-            
-            if (body.getAttribute("data-theme") === "light") {
-                body.setAttribute("data-theme", "dark");
-                button.textContent = "☀️ Claro";
-            } else {
-                body.setAttribute("data-theme", "light");
-                button.textContent = "🌙 Escuro";
-            }
-        }
-    </script>
+<!-- FOOTER -->
+<footer class="text-center bg-dark text-white py-3">
+    © 2025 Cleber S. Moraes — Todos os direitos reservados.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
